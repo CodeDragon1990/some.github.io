@@ -1,0 +1,54 @@
+/* 基础样式 */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+header, footer {
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  width: 200px; /* 调整大小以适应布局 */
+  height: auto;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+.developer-info {
+  max-width: 800px;
+  width: 90%;
+  text-align: left;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.card {
+  flex: 1 1 400px;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid #4d4c4c;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card p, .card h3 {
+  margin: 10px 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}

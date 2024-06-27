@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>某君的个人网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <img src="./logo.png" alt="Logo" class="logo" />
+            <div class="intro">
+                <h1>某君的个人网站</h1>
+                <h2>开发者介绍</h2>
+                <p><strong>姓名：</strong>某君</p>
+        <p><strong>性别：</strong>男</p>
+        <p><strong>介绍：</strong>我是一名移动端开发者，擅长Flutter和原生安卓开发，最近正在学习鸿蒙原生开发。</p>
+        <p><strong>社交媒体：</strong>
+          <a href="https://space.bilibili.com/1994596066?spm_id_from=333.1007.0.0&#34;  target="_blank">B站</a>
+        </p>
+            </div>
+        </header>
+
+        <main>
+            <section class="developer-info">
+                <!-- 开发者信息 -->
+            </section>
+
+            <section class="features">
+              <div class="card" onclick="goToFlagPage2()">
+                <h3>开发者介绍</h3>
+                <p>介绍开发者</p>
+            </div>
+                <div class="card" onclick="goToFlagPage()">
+                    <h3>开发者立过的flag</h3>
+                    <p>开发者立过的flag大纲</p>
+                </div>
+                <div class="card" onclick="goToVotePage()">
+                    <h3>给偶像投票</h3>
+                    <p>参与偶像投票活动</p>
+                </div>
+                <div class="card" onclick="goToSponsorPage()">
+                    <h3>赞助开发者</h3>
+                    <p>赞助让开发者继续下去</p>
+                </div>
+                
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2024 某君. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
