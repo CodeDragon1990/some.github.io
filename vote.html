@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给偶像投票</title>
+    <!-- 引入DaisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <head>
+        <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="Logo.png">
+        <link rel="apple-touch-icon" href="path/to/your/apple-touch-icon.png">
+    </head>
+    <link rel="stylesheet" href="vote.css">
+</head>
+<body>
+
+<!-- 返回首页按钮 -->
+<div class="return-button">
+    <button class="btn btn-primary" onclick="goHome()">返回首页</button>
+</div>
+
+<!-- 投票提示 -->
+<div class="voting-instructions">
+    <h2>给偶像投票</h2>
+    <p>每个人或者每个IP只有一次机会，只能投给一个人。请做好选择并投下你的票，不能反悔。</p>
+</div>
+
+<!-- 候选人卡片 -->
+<div class="card" id="candidate_donghui">
+    <figure>
+        <img src="donghui.png" alt="东辉条" class="candidate-img" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">东辉条</h2>
+        <div class="flex justify-content-between">
+            <span class="badge badge-info" id="voteCount_donghui">票数: 0</span>
+            <button class="btn" id="voteBtn_donghui" onclick="vote('donghui')">投票</button>
+        </div>
+    </div>
+</div>
+<div class="card" id="candidate_jige">
+    <figure>
+        <img src="jige.png" alt="基哥" class="candidate-img" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">基哥</h2>
+        <div class="card-actions justify-between">
+            <span class="badge badge-info" id="voteCount_jige">票数: 0</span>
+            <button class="btn btn-primary" id="voteBtn_jige" onclick="vote('donghui')">投票</button>
+        </div>
+    </div>
+</div>
+<div class="card" id="candidate_yupi">
+    <figure>
+        <img src="yupi.png" alt="鱼皮" class="candidate-img" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">鱼皮</h2>
+        <div class="card-actions justify-between">
+            <span class="badge badge-info" id="voteCount_yupi">票数: 0</span>
+            <button class="btn btn-primary" id="voteBtn_yupi" onclick="vote('donghui')">投票</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<script>
+    // 用于存储投票数据和已投票标记的对象
+    let voteData = {
+        'donghui': { votes: 0, voted: false },
+        // 其他候选人的数据结构同上
+    };
+
+    // 从localStorage加载之前的投票数据
+    if (localStorage.getItem('voteData')) {
+        voteData = JSON.parse(localStorage.getItem('voteData'));
+    }
+
+    function vote(candidateId) {
+        if (voteData[candidateId].voted) {
+            alert('您已经投过票了！');
+            return;
+        }
+
+        // 更新票数
+        voteData[candidateId].votes++;
+        document.getElementById('voteCount_' + candidateId).textContent = '票数: ' + voteData[candidateId].votes;
+
+        // 标记已投票
+        voteData[candidateId].voted = true;
+
+        // 禁用投票按钮
+        document.getElementById('voteBtn_' + candidateId).classList.add('btn-voted');
+
+        // 保存投票数据
+        localStorage.setItem('voteData', JSON.stringify(voteData));
+
+        // 弹出投票成功的提示
+        alert('恭喜你完成投票，助力这个偶像的发展！');
+    }
+
+    function goHome() {
+        window.location.href = 'index.html'; // 替换为实际的首页URL
+    }
+
+    // 页面加载时更新票数显示
+    window.onload = function() {
+        updateVoteCounts();
+    };
+
+    // 更新所有票数显示
+    function updateVoteCounts() {
+        for (const candidateId in voteData) {
+            const voteCountElement = document.getElementById('voteCount_' + candidateId);
+            voteCountElement.textContent = '票数: ' + voteData[candidateId].votes;
+        }
+    }
+</script>
+
+</body>
+</html>

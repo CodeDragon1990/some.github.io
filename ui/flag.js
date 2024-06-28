@@ -42,9 +42,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-    // 反馈按钮的逻辑（这里只是一个示例）
-    feedbackBtn.addEventListener('click', function() {
-        alert('感谢您的反馈！');
-    });
 });

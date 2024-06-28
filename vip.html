@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员支持页面</title>
+    <link rel="stylesheet" href="vip.css">
+    <head>
+        <link rel="icon" href="path/to/your/favicon.ico" type="image/x-icon">
+        <link rel="icon" sizes="16x16" href="Logo.png">
+        <link rel="apple-touch-icon" href="path/to/your/apple-touch-icon.png">
+    </head>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>支持这个项目</h1>
+    </div>
+
+    <div class="return-button" onclick="window.location.href='index.html'">返回首页</div>
+
+    <div class="support-container">
+        <div class="support-card">
+            <h3>请开发者喝杯可乐</h3>
+            <p><strong>金额：</strong>20元</p>
+            <p><strong>对开发者的帮助：</strong>支持开发者的日常开销，助力项目的持续更新。</p>
+            <p><strong>资助者好处：</strong>您的名字将出现在我们的感谢名单中。</p>
+            <button class="support-btn" onclick="showModal('感谢您请开发者喝杯可乐')">支付</button>
+        </div>
+        <div class="support-card">
+            <h3>请开发者吃顿好的</h3>
+            <p><strong>金额：</strong>20元</p>
+            <p><strong>对开发者的帮助：</strong>为开发者提供更好的工作条件，促进项目的快速发展。</p>
+            <p><strong>资助者好处：</strong>您将获得我们产品的早期试用权。</p>
+            <button class="support-btn" onclick="showModal('感谢您请开发者吃顿好的')">支付</button>
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="modal-img" src="wechat_qrcode.png" alt="微信支付二维码">
+        <p id="modalText"></p>
+    </div>
+</div>
+
+<script>
+    function showModal(modalText) {
+        var modal = document.getElementById("myModal");
+        var modalTextElement = document.getElementById("modalText");
+        modal.style.display = "block";
+        modalTextElement.textContent = modalText;
+    }
+
+    var closeButton = document.getElementsByClassName("close")[0];
+    closeButton.onclick = function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

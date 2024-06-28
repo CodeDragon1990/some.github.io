@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.return-button {
+    margin-bottom: 20px;
+}
+.card {
+    width: 100%;
+    max-width: 300px; /* 限制卡片最大宽度 */
+    margin: 10px auto; /* 在小屏幕上水平居中 */
+}
+.candidate-img {
+    width: 100%; /* 让图片宽度充满卡片 */
+    height: 200px; /* 设置图片高度 */
+    object-fit: cover;
+}
+.voting-instructions {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card-title {
+    margin: 10px 0;
+}
+.badge-info {
+    margin-right: 10px;
+}
+.btn-voted {
+    background-color: #ccc;
+}
+/* 媒体查询：在屏幕宽度小于600px时，调整卡片布局 */
+@media (max-width: 600px) {
+    .card {
+        max-width: 100%;
+    }
+}

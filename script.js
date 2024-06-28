@@ -5,16 +5,13 @@ function goToFlagPage2() {
 }
 
 function goToFlagPage() {
-  console.log('前往开发者立过的flag页面');
-  // 实现页面跳转逻辑
+  window.location.href = 'ui/flag.html';
 }
 
 function goToSponsorPage() {
-  console.log('前往赞助开发者页面');
-  // 实现页面跳转逻辑
+  window.location.href = 'vip.html';
 }
 
 function goToVotePage() {
-  console.log('前往给偶像投票页面');
-  // 实现页面跳转逻辑
+  window.location.href = 'vote.html';
 }
